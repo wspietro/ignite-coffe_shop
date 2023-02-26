@@ -1,0 +1,172 @@
+{
+  "products": [
+    {
+      "product": "Expresso Tradicional",
+      "description": "O tradicional café feito com água quente e grãos moídos",
+      "price": "990",
+      "categories": {
+        "traditional": true,
+        "cold": false,
+        "milk": false,
+        "special": false,
+        "alcohol": false
+      }
+    },
+    {
+      "product": "Expresso Americano",
+      "description": "Expresso diluído, menos intenso que o tradicional",
+      "price": "990",
+      "categories": {
+        "traditional": true,
+        "cold": false,
+        "milk": false,
+        "special": false,
+        "alcohol": false
+      }
+    },
+    {
+      "product": "Expresso Cremoso",
+      "description": "Café expresso tradicional com espuma cremosa",
+      "price": "990",
+      "categories": {
+        "traditional": true,
+        "cold": false,
+        "milk": false,
+        "special": false,
+        "alcohol": false
+      }
+    },
+    {
+      "product": "Expresso Gelado",
+      "description": "Bebida preparada com café expresso e cubos de gelo",
+      "price": "990",
+      "categories": {
+        "traditional": true,
+        "cold": true,
+        "milk": false,
+        "special": false,
+        "alcohol": false
+      }
+    },
+    {
+      "product": "Café com Leite",
+      "description": "Meio a meio de expresso tradicional com leite vaporizado",
+      "price": "990",
+      "categories": {
+        "traditional": true,
+        "cold": false,
+        "milk": true,
+        "special": false,
+        "alcohol": false
+      }
+    },
+    {
+      "product": "Latte",
+      "description": "Uma dose de café expresso com o dobro de leite e espuma cremosa",
+      "price": "990",
+      "categories": {
+        "traditional": true,
+        "cold": false,
+        "milk": true,
+        "special": false,
+        "alcohol": false
+      }
+    },
+    {
+      "product": "Capuccino",
+      "description": "Bebida com canela feita de doses iguais de café, leite e espuma",
+      "price": "990",
+      "categories": {
+        "traditional": true,
+        "cold": false,
+        "milk": true,
+        "special": false,
+        "alcohol": false
+      }
+    },
+    {
+      "product": "Macchiato",
+      "description": "Café expresso misturado com um pouco de leite quente e espuma",
+      "price": "990",
+      "categories": {
+        "traditional": true,
+        "cold": false,
+        "milk": true,
+        "special": false,
+        "alcohol": false
+      }
+    },
+    {
+      "product": "Mocaccino",
+      "description": "Café expresso com calda de chocolate, pouco leite e espuma",
+      "price": "990",
+      "categories": {
+        "traditional": true,
+        "cold": false,
+        "milk": true,
+        "special": false,
+        "alcohol": false
+      }
+    },
+    {
+      "product": "Chocolate Quente",
+      "description": "Bebida feita com chocolate dissolvido no leite quente e café",
+      "price": "990",
+      "categories": {
+        "traditional": false,
+        "cold": false,
+        "milk": true,
+        "special": true,
+        "alcohol": false
+      }
+    },
+    {
+      "product": "Cubano",
+      "description": "Drink gelado de café expresso com rum, creme de leite e hortelã",
+      "price": "990",
+      "categories": {
+        "traditional": false,
+        "cold": true,
+        "milk": false,
+        "special": true,
+        "alcohol": true
+      }
+    },
+    {
+      "product": "Havaiano",
+      "description": "Bebida adocicada preparada com café e leite de coco",
+      "price": "990",
+      "categories": {
+        "traditional": false,
+        "cold": false,
+        "milk": false,
+        "special": true,
+        "alcohol": false
+      }
+    },
+    {
+      "product": "Árabe",
+      "description": "Bebida preparada com grãos de café árabe e especiarias",
+      "price": "990",
+      "categories": {
+        "traditional": false,
+        "cold": false,
+        "milk": false,
+        "special": true,
+        "alcohol": false
+      }
+    },
+    {
+      "product": "Irlandês",
+      "description": "Bebida a base de café, uísque irlandês, açúcar e chantilly",
+      "price": "990",
+      "categories": {
+        "traditional": true,
+        "cold": false,
+        "milk": false,
+        "special": true,
+        "alcohol": true
+      }
+    }
+  ]
+}
