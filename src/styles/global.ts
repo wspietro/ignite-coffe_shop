@@ -21,4 +21,15 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: ${({ theme }) => theme.fontWeight.regular};
     font-size: 1rem;
   }
+
+  p, span {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.3;
+    font-weight: 400;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Baloo 2', sans-serif;
+    line-height: 1.3;
+  }
 `;
