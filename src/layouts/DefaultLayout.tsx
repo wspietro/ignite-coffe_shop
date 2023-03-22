@@ -14,7 +14,7 @@ export function DefaultLayout() {
 const LayoutContainer = styled.body`
   max-width: 74rem;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0 2rem;
 
   display: flex;
   flex-direction: column;

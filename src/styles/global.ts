@@ -18,7 +18,7 @@ export const GlobalStyle = createGlobalStyle`
 
   body, input, textarea, button {
     font-family: 'Roboto', sans-serif;
-    font-weight: ${props => props.theme.fontWeight.regular};
+    font-weight: ${({ theme }) => theme.fontWeight.regular};
     font-size: 1rem;
   }
 `;
