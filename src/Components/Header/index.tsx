@@ -5,7 +5,7 @@ import {
   HeaderContainer,
   SideActions,
   LocationBox
-} from './Styles'
+} from './styles'
 
 import logoCoffeDelivery from '../../assets/logo.svg'
 

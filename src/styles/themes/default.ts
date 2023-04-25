@@ -29,4 +29,9 @@ export const defaultTheme = {
     bold: 700,
     extraBold: 800
   },
+
+  breakpoints: {
+    mobile: '480px',
+    tablet: '768px'
+  }
 } as const

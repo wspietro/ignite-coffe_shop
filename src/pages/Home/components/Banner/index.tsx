@@ -12,6 +12,7 @@ import {
   InformationItems,
   Item,
   IconWrapper,
+  ImgWrapper
 } from './styles'
 
 import bannerImg from '../../../../assets/banner-img.svg'
@@ -53,7 +54,9 @@ export function Banner() {
         </InformationItems>
       </Information>
 
-      <img src={bannerImg} alt="" />
+      <ImgWrapper>
+        <img src={bannerImg} alt="" />
+      </ImgWrapper>
 
     </BannerHome>
   )

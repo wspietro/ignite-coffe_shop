@@ -12,21 +12,23 @@ export const Information = styled.div`
 
   display: flex;
   flex-direction: column;
+  flex: 1;
   gap: 4.125rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    gap: 2rem;
+  }
 `
 
 export const InformationText = styled.div`
-  flex-shrink: 2;
-  
   h1 {
     font-weight: 800;
-    font-size: 3rem;
+    font-size: clamp(2rem, 2.5vw + 1rem, 3rem);
     color: ${({ theme }) => theme.colors.base.title};
   }
 
   > p {
     margin-top: 1rem;
-    font-weight: 400;
     font-size: 1.25rem;
     line-height: 1.3;
     color: ${({ theme }) => theme.colors.base.subtitle};
@@ -34,21 +36,24 @@ export const InformationText = styled.div`
 `
 
 export const InformationItems = styled.div`
-  max-width: 35.4375rem;
   display: grid;
   grid-template-columns: 1fr 1.3fr;
   gap: 1.25rem 2rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    grid-template-columns: 1fr;
+  }
 `
 
 export const Item = styled.div`
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 
-    span {
-      font-size: 1rem;
-      color: ${({ theme }) => theme.colors.base.text}
-    }
+  span {
+    font-size: 1rem;
+    color: ${({ theme }) => theme.colors.base.text}
+  }
 `
 
 interface IconWrapperProps {
@@ -57,14 +62,26 @@ interface IconWrapperProps {
 
 export const IconWrapper = styled.div<IconWrapperProps>`
   display: flex;
-    align-items: center;
-    justify-content: center;
+  align-items: center;
+  justify-content: center;
 
-    padding: 0.5rem;
-    background-color: ${({ theme, color }) => color ? theme.colors.product[color] : theme.colors.base.text};
-    border-radius: 50%;
+  padding: 0.5rem;
+  background-color: ${({ theme, color }) => color ? theme.colors.product[color] : theme.colors.base.text};
+  border-radius: 50%;
 
-      svg {
-        color: ${({ theme }) => theme.colors.base.background};
-      }
+  svg {
+    color: ${({ theme }) => theme.colors.base.background};
+  }
+`
+
+export const ImgWrapper = styled.div`
+  flex: 1;
+  max-width: 476px;
+  img {
+    width: 100%;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    display: none;
+  }
 `
