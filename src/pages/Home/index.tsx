@@ -1,12 +1,42 @@
+import { useEffect, useState } from "react";
 import { Banner } from "./components/Banner";
-import { InformationItems } from "./components/Banner/styles";
 import { CoffeeCard } from "./components/CoffeeCard";
 
 import { HomeWrapper, OurProducts, Products } from "./styles";
+import { api } from "../../lib/axios";
+
+interface Categories {
+  traditional: boolean;
+  cold: boolean;
+  milk: boolean;
+  special: boolean;
+  alcohol: boolean;
+}
+
+interface Product {
+  name: string;
+  description: string;
+  price: number;
+  categories: Categories;
+}
 
 export function Home() {
-  const cards = Array.from({ length: 14 }, (_, index) => index + 1)
-  console.log(cards);
+  const [products, setProducts] = useState<Product[]>([])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await api.get('products', {
+        params: {
+          categories: 3
+        }
+      })
+      setProducts(response.data)
+    }
+
+    fetchData();
+  }, [])
+
+  console.log(products)
 
   return (
     <HomeWrapper>
@@ -15,7 +45,7 @@ export function Home() {
       <OurProducts>
         <h3>Nossos Cafés</h3>
         <Products>
-          {cards.map(card => <CoffeeCard />)}
+          {products.map(product => <CoffeeCard key={product.name} />)}
         </Products>
       </OurProducts>
     </HomeWrapper>
