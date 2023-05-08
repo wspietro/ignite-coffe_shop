@@ -31,7 +31,7 @@ export function ProductsSection() {
   const [products, setProducts] = useState<Product[]>([])
   const [params, setParams] = useState<Params>({
     'categories.traditional': true,
-    'categories.cold': false,
+    'categories.cold': true,
     'categories.milk': false,
     'categories.special': false,
     'categories.alcohol': false,
@@ -48,7 +48,6 @@ export function ProductsSection() {
     fetchData();
   }, [params])
 
-  console.log(products)
 
   return (
     <OurProducts>

@@ -4,6 +4,7 @@ import {
   ImgWrapper,
   Title,
   Description,
+  Tags,
   DescriptionTag,
   Footer,
   PriceInfo,
@@ -63,9 +64,18 @@ export function CoffeeCard(product: CoffeCardProps) {
         <img src={trad} alt="" />
       </ImgWrapper>
 
-      <DescriptionTag>
-        Tradicional
-      </DescriptionTag>
+
+      <Tags>
+        {Object.entries(product.categories).map(([name, value]) => {
+          if (value) {
+            return (
+              <DescriptionTag>
+                {name}
+              </DescriptionTag>
+            )
+          }
+        })}
+      </Tags>
 
       <Title>
         {product.name}

@@ -25,6 +25,11 @@ export const ImgWrapper = styled.div`
   }
 `
 
+export const Tags = styled.div`
+  display: flex;
+  gap: 0.25rem;
+`
+
 export const DescriptionTag = styled.div`
   font-size: 10px;
   text-transform: uppercase;
