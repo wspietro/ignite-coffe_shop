@@ -16,8 +16,24 @@ import {
 import trad from '../../../../assets/expresso-tradicional.svg'
 import { Minus, Plus, ShoppingCart } from 'phosphor-react'
 import { useState } from 'react'
+import { priceFormatter } from '../../../../utils/formatter';
 
-export function CoffeeCard() {
+interface Categories {
+  traditional: boolean;
+  cold: boolean;
+  milk: boolean;
+  special: boolean;
+  alcohol: boolean;
+}
+
+interface CoffeCardProps {
+  name: string;
+  description: string;
+  price: number;
+  categories: Categories;
+}
+
+export function CoffeeCard(product: CoffeCardProps) {
   const [count, setCount] = useState(1);
 
   function handleClickIncrement() {
@@ -33,9 +49,13 @@ export function CoffeeCard() {
     }
   }
 
-  function handleChange(e) {
-    setCount(e.target.value);
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const value = Number(e.target.value)
+    setCount(value);
   }
+
+  const formattedPrice = priceFormatter.format(product.price / 100);
+  const priceWithoutSymbol = formattedPrice.replace('R$', '');
 
   return (
     <CardWrapper>
@@ -48,16 +68,16 @@ export function CoffeeCard() {
       </DescriptionTag>
 
       <Title>
-        Expresso Tradicional
+        {product.name}
       </Title>
 
       <Description>
-        O tradicional café feito com água quente e grãos moídos
+        {product.description}
       </Description>
 
       <Footer>
         <PriceInfo>
-          R$ <span>9,90</span>
+          R$ <span>{priceWithoutSymbol}</span>
         </PriceInfo>
 
         <ActionGroup>
