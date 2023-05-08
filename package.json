@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@radix-ui/react-toggle-group": "^1.0.3",
     "axios": "^1.4.0",
     "phosphor-react": "^1.4.1",
     "qs": "^6.11.1",

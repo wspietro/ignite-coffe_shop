@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { CoffeeCard } from "../CoffeeCard";
-import { OurProducts, Products } from './styles'
+import { OurProducts, ToggleGroupRoot, ToggleGroupItem, Products } from './styles'
 import { api } from "../../../../lib/axios";
+import * as ToggleGroup from '@radix-ui/react-toggle-group';
 
 interface Categories {
   traditional: boolean;
@@ -52,6 +53,29 @@ export function ProductsSection() {
   return (
     <OurProducts>
       <h3>Nossos Cafés</h3>
+
+      <ToggleGroupRoot
+        type="multiple"
+        // defaultValue="center"
+        aria-label="Filtro de produtos"
+      >
+        <ToggleGroupItem value="tradicional">
+          Tradicional
+        </ToggleGroupItem>
+        <ToggleGroupItem value="especial">
+          Especial
+        </ToggleGroupItem>
+        <ToggleGroupItem value="leite">
+          Com Leite
+        </ToggleGroupItem>
+        <ToggleGroupItem value="alcoolico">
+          Alcoólico
+        </ToggleGroupItem>
+        <ToggleGroupItem value="right">
+          Gelado
+        </ToggleGroupItem>
+      </ToggleGroupRoot>
+
       <Products>
         {products.map(product => <CoffeeCard key={product.name} {...product} />)}
       </Products>
