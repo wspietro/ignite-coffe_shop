@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { CoffeeCard } from "../CoffeeCard";
 import { OurProducts, ToggleGroupRoot, ToggleGroupItem, Products } from './styles'
 import { api } from "../../../../lib/axios";
-import * as ToggleGroup from '@radix-ui/react-toggle-group';
 
 interface Categories {
   traditional: boolean;
@@ -19,24 +18,60 @@ interface Product {
   categories: Categories;
 }
 
+interface ActionType {
+  type: 'traditional' | 'cold' | 'milk' | 'special' | 'alcohol'
+}
+
 interface Params {
-  'categories.traditional': boolean;
-  'categories.cold': boolean;
-  'categories.milk': boolean;
-  'categories.special': boolean;
-  'categories.alcohol': boolean;
+  'categories.traditional'?: boolean;
+  'categories.cold'?: boolean;
+  'categories.milk'?: boolean;
+  'categories.special'?: boolean;
+  'categories.alcohol'?: boolean;
+}
+
+
+function reducer(params: Params, action: ActionType) {
+  switch (action.type) {
+    case 'traditional':
+      const traditional = params["categories.traditional"] ? undefined : true
+      return {
+        ...params,
+        ["categories.traditional"]: traditional
+      }
+    case 'special':
+      const special = params["categories.special"] ? undefined : true
+      return {
+        ...params,
+        ["categories.special"]: special
+      }
+    case 'milk':
+      const milk = params["categories.milk"] ? undefined : true
+      return {
+        ...params,
+        ["categories.milk"]: milk
+      }
+    case 'alcohol':
+      const alcohol = params["categories.alcohol"] ? undefined : true
+      return {
+        ...params,
+        ["categories.alcohol"]: alcohol
+      }
+    case 'cold':
+      const cold = params["categories.cold"] ? undefined : true
+      return {
+        ...params,
+        ["categories.cold"]: cold
+      }
+    default:
+      throw new Error();
+  }
 }
 
 
 export function ProductsSection() {
   const [products, setProducts] = useState<Product[]>([])
-  const [params, setParams] = useState<Params>({
-    'categories.traditional': true,
-    'categories.cold': true,
-    'categories.milk': false,
-    'categories.special': false,
-    'categories.alcohol': false,
-  })
+  const [params, dispatch] = useReducer<Params>(reducer, {})
 
   useEffect(() => {
     const fetchData = async () => {
@@ -56,22 +91,21 @@ export function ProductsSection() {
 
       <ToggleGroupRoot
         type="multiple"
-        // defaultValue="center"
         aria-label="Filtro de produtos"
       >
-        <ToggleGroupItem value="tradicional">
+        <ToggleGroupItem value="traditional" onClick={() => dispatch({ type: 'traditional' })}>
           Tradicional
         </ToggleGroupItem>
-        <ToggleGroupItem value="especial">
+        <ToggleGroupItem value="special" onClick={() => dispatch({ type: 'special' })}>
           Especial
         </ToggleGroupItem>
-        <ToggleGroupItem value="leite">
+        <ToggleGroupItem value="milk" onClick={() => dispatch({ type: 'milk' })}>
           Com Leite
         </ToggleGroupItem>
-        <ToggleGroupItem value="alcoolico">
+        <ToggleGroupItem value="alcohol" onClick={() => dispatch({ type: 'alcohol' })}>
           Alcoólico
         </ToggleGroupItem>
-        <ToggleGroupItem value="right">
+        <ToggleGroupItem value="cold" onClick={() => dispatch({ type: 'cold' })}>
           Gelado
         </ToggleGroupItem>
       </ToggleGroupRoot>

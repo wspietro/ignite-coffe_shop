@@ -69,7 +69,7 @@ export function CoffeeCard(product: CoffeCardProps) {
         {Object.entries(product.categories).map(([name, value]) => {
           if (value) {
             return (
-              <DescriptionTag>
+              <DescriptionTag key={name}>
                 {name}
               </DescriptionTag>
             )
