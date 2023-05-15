@@ -97,7 +97,7 @@
       }
     },
     {
-      "product": "Chocolate Quente",
+      "name": "Chocolate Quente",
       "description": "Bebida feita com chocolate dissolvido no leite quente e café",
       "price": 990,
       "categories": {
@@ -121,7 +121,7 @@
       }
     },
     {
-      "product": "Cubano",
+      "name": "Cubano",
       "description": "Drink gelado de café expresso com rum, creme de leite e hortelã",
       "price": 990,
       "categories": {
@@ -133,7 +133,7 @@
       }
     },
     {
-      "product": "Havaiano",
+      "name": "Havaiano",
       "description": "Bebida adocicada preparada com café e leite de coco",
       "price": 990,
       "categories": {

@@ -71,7 +71,7 @@ function reducer(params: Params, action: ActionType) {
 
 export function ProductsSection() {
   const [products, setProducts] = useState<Product[]>([])
-  const [params, dispatch] = useReducer<Params>(reducer, {})
+  const [params, dispatch] = useReducer<React.Reducer<Params, ActionType>>(reducer, {})
 
   useEffect(() => {
     const fetchData = async () => {
@@ -93,7 +93,7 @@ export function ProductsSection() {
         type="multiple"
         aria-label="Filtro de produtos"
       >
-        <ToggleGroupItem value="traditional" onClick={() => dispatch({ type: 'traditional' })}>
+        <ToggleGroupItem value="traditional" onClick={() => dispatch({ type: "traditional" })}>
           Tradicional
         </ToggleGroupItem>
         <ToggleGroupItem value="special" onClick={() => dispatch({ type: 'special' })}>
