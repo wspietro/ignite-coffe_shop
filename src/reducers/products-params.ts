@@ -1,4 +1,6 @@
 
+import { produce } from 'immer'
+
 export interface ActionType {
   type: 'traditional' | 'cold' | 'milk' | 'special' | 'alcohol'
 }
@@ -14,35 +16,15 @@ export interface Params {
 export function productsParamsReducer(params: Params, action: ActionType) {
   switch (action.type) {
     case 'traditional':
-      const traditional = params["categories.traditional"] ? undefined : true
-      return {
-        ...params,
-        ["categories.traditional"]: traditional
-      }
+      return produce(params, draft => { draft['categories.traditional'] = draft['categories.traditional'] ? undefined : true })
     case 'special':
-      const special = params["categories.special"] ? undefined : true
-      return {
-        ...params,
-        ["categories.special"]: special
-      }
+      return produce(params, draft => { draft['categories.special'] = draft['categories.special'] ? undefined : true })
     case 'milk':
-      const milk = params["categories.milk"] ? undefined : true
-      return {
-        ...params,
-        ["categories.milk"]: milk
-      }
+      return produce(params, draft => { draft['categories.milk'] = draft['categories.milk'] ? undefined : true })
     case 'alcohol':
-      const alcohol = params["categories.alcohol"] ? undefined : true
-      return {
-        ...params,
-        ["categories.alcohol"]: alcohol
-      }
+      return produce(params, draft => { draft['categories.alcohol'] = draft['categories.alcohol'] ? undefined : true })
     case 'cold':
-      const cold = params["categories.cold"] ? undefined : true
-      return {
-        ...params,
-        ["categories.cold"]: cold
-      }
+      return produce(params, draft => { draft['categories.cold'] = draft['categories.cold'] ? undefined : true })
     default:
       throw new Error();
   }

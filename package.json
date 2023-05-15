@@ -12,6 +12,7 @@
   "dependencies": {
     "@radix-ui/react-toggle-group": "^1.0.3",
     "axios": "^1.4.0",
+    "immer": "^10.0.2",
     "phosphor-react": "^1.4.1",
     "qs": "^6.11.1",
     "react": "^18.2.0",
